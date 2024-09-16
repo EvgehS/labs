@@ -28,11 +28,8 @@ double t(double x)
     double sum_1 = 0, sum_2 = 0;
     for(k = 0; k <= 10; k++)
     {
-        sum_1 += in_degree(x, 2 * k + 1) / double_factorial(2 * k + 1);
-    }
-    for(k = 0; k <= 10; k++)
-    {
         sum_2 += in_degree(x, 2 * k) / double_factorial(2 * k);
+        sum_1 += in_degree(x, 2 * k + 1) / double_factorial(2 * k + 1);
     }
     return sum_1 / sum_2;
 }
