@@ -30,12 +30,10 @@ double t(double x)
     {
         sum_1 += in_degree(x, 2 * k + 1) / double_factorial(2 * k + 1);
     }
-    cout << sum_1 << endl;
     for(k = 0; k <= 10; k++)
     {
         sum_2 += in_degree(x, 2 * k) / double_factorial(2 * k);
     }
-    cout << sum_2 << endl;
     return sum_1 / sum_2;
 }
 
