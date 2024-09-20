@@ -12,7 +12,7 @@ double in_degree(double digit, int degree)
     return ans;
 }
 
-double double_factorial(int digit)
+long int double_factorial(int digit)
 {
     long long int ans = 1;
     for(digit; digit > 0; digit -= 2)
