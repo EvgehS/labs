@@ -3,7 +3,7 @@
 using namespace std;
 
 int n;
-long int target;
+long long int target;
 
 long int maximum(long int num_1, long int num_2)
 {
@@ -14,7 +14,7 @@ long int maximum(long int num_1, long int num_2)
     return num_2;
 }
 
-long int find_diff(long int sum, int array[], int index)
+long int find_diff(long int sum, long long int array[], int index)
 {
     if(sum <= target)
     {
@@ -35,10 +35,10 @@ long int find_diff(long int sum, int array[], int index)
 
 int main()
 {
-    long int summa = 0;
+    long long int summa = 0;
     cin >> n;
 
-    int arr[n] = {};
+    long long int arr[n] = {};
     for (int i = 0; i < n; i++)
     {
         cin >> arr[i];
