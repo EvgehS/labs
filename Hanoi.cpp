@@ -13,6 +13,8 @@ void func(int n, int curr, int free, int target)
 
 int main()
 {
-    func(3, 1, 2, 3);
+    int n;
+    cin >> n;
+    func(n, 1, 2, 3);
     return 0;
 }
