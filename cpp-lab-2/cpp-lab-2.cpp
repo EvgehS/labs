@@ -2,9 +2,9 @@
 
 using namespace std;
 
-double in_degree(double digit, int degree)
+long double in_degree(long double digit, int degree)
 {
-    double ans = 1;
+    long double ans = 1;
     for(int i = 0; i < degree; i++)
     {
         ans *= digit;
@@ -22,10 +22,10 @@ long int double_factorial(int digit)
     return ans;
 }
 
-double t(double x)
+long double t(double x)
 {
     int k;
-    double sum_1 = 0, sum_2 = 0;
+    long double sum_1 = 0, sum_2 = 0;
     for(k = 0; k <= 10; k++)
     {
         sum_2 += in_degree(x, 2 * k) / double_factorial(2 * k);
@@ -42,6 +42,7 @@ int main()
 {
     double y;
     cin >> y;
+    t(1 + y);
     cout << f(y) << endl;
     return 0;
 

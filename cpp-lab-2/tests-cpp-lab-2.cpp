@@ -1,11 +1,12 @@
 #include <iostream>
 #include <chrono>
+
 using namespace std;
 
-double in_degree(double digit, int degree)
+long double in_degree(long double digit, int degree)
 {
-    double ans = 1;
-    for (int i = 0; i < degree; i++)
+    long double ans = 1;
+    for(int i = 0; i < degree; i++)
     {
         ans *= digit;
     }
@@ -15,18 +16,18 @@ double in_degree(double digit, int degree)
 long int double_factorial(int digit)
 {
     long long int ans = 1;
-    for (digit; digit > 0; digit -= 2)
+    for(digit; digit > 0; digit -= 2)
     {
         ans *= digit;
     }
     return ans;
 }
 
-double t(double x)
+long double t(double x)
 {
     int k;
-    double sum_1 = 0, sum_2 = 0;
-    for (k = 0; k <= 10; k++)
+    long double sum_1 = 0, sum_2 = 0;
+    for(k = 0; k <= 10; k++)
     {
         sum_2 += in_degree(x, 2 * k) / double_factorial(2 * k);
         sum_1 += in_degree(x, 2 * k + 1) / double_factorial(2 * k + 1);
@@ -39,10 +40,10 @@ double function(double y)
     return (7 * t(0.25) + 2 * t(1 + y)) / (6 - t(in_degree(y, 2) - 1));
 }
 
-void test(double digit, double answer)
+void test(long double digit, double answer)
 {
     auto start = chrono::high_resolution_clock::now();
-    double result = function(digit);
+    long double result = function(digit);
     auto end = chrono::high_resolution_clock::now();
     chrono::duration<double, milli> duration = end - start;
     if (abs(result - answer) < 3e-5)
@@ -62,5 +63,6 @@ int main()
     test(6, -2.62495);
     test(-100, 0.0192057);
     test(1000, -0.00200846);
+    test(100000000000000000, -2e-17);
     return 0;
 }
