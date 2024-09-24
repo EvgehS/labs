@@ -1,5 +1,6 @@
 #include <iostream>
-
+#include <chrono>
+#include <fstream>
 using namespace std;
 
 void merge(long long *arr, long long left, long long mid, long long right)
@@ -103,23 +104,20 @@ long long binarySearch(long long int *arr, long long int size, long long int tar
     return target - result;
 }
 
-int main()
+long long solve(int n, long long int *values)
 {
-    int n;
-    cin >> n;
-
-    long long int left[n / 2] = {}, right[n / 2 + n % 2] = {};
     long long total_sum = 0;
+    long long left[n / 2], right[n/2 + n % 2];
 
-    for (int i = 0; i < n / 2; i++)
+        for (int i = 0; i < n / 2; ++i)
     {
-        cin >> left[i];
+        left[i] = values[i];
         total_sum += left[i];
     }
 
-    for (int i = 0; i < (n / 2 + n % 2); i++)
+    for (int i = 0; i < (n / 2 + n % 2); ++i)
     {
-        cin >> right[i];
+        right[i] = values[n / 2 + i];
         total_sum += right[i];
     }
 
@@ -138,7 +136,47 @@ int main()
             min_diff = min(min_diff, 2 * binarySearch(rightSums, 1 << (n / 2 + n % 2), target - left_sum) + total_sum % 2);
     }
 
-    cout << min_diff << endl;
+    return min_diff;
+}
 
+void test(int n, long long *values, long long answer)
+{
+    auto start = chrono::high_resolution_clock::now();
+    
+    long long result = solve(n, values);
+
+    auto end = chrono::high_resolution_clock::now();
+    chrono::duration<double> duration = end - start;
+
+    if (result == answer)
+    {
+        cout << "Тест пройден за " << duration.count() << " секунды" << endl;
+    }
+    else
+    {
+        cout << "Тест не пройден, верный ответ: " << answer << ", ответ программы: " << result << endl;
+    }
+}
+
+int main()
+{
+    ifstream file("testcases.txt");
+
+    int n;
+    while (file >> n)
+    {
+        long long *values = new long long[n];
+        for (int i = 0; i < n; ++i)
+            file >> values[i];
+
+        long long expected_answer;
+        file >> expected_answer;
+
+        test(n, values, expected_answer);
+
+        delete[] values;
+    }
+
+    file.close();
     return 0;
 }
