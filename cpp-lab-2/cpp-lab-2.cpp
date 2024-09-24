@@ -14,7 +14,7 @@ long double in_degree(long double digit, int degree)
 
 long int double_factorial(int digit)
 {
-    long long int ans = 1;
+    long int ans = 1;
     for(digit; digit > 0; digit -= 2)
     {
         ans *= digit;
