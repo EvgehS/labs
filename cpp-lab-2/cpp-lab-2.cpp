@@ -42,7 +42,6 @@ int main()
 {
     double y;
     cin >> y;
-    t(1 + y);
     cout << f(y) << endl;
     return 0;
 
