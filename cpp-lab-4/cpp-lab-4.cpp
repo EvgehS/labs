@@ -1,4 +1,5 @@
 #include <iostream>
+#include <fstream>
 
 using namespace std;
 
@@ -16,15 +17,17 @@ long long int sqrt(long long int x)
 
 int main()
 {
-    long long int n;
+    long int n;
     cin >> n;
     long long int summa = (n + 1) * n / 4;
 
+    ofstream file("output.txt");
+
     if (n % 4 == 0 || n % 4 == 3)
     {
-        cout << "YES" << endl;
+        file << "YES" << endl;
 
-        long long int i = (2 + sqrt(1 + 2 * n + 2 * n * n)) / 2, l = n + 1 - i, extension = 0;
+        long int i = (2 + sqrt(1 + 2 * n + 2 * n * n)) / 2, l = n + 1 - i, extension = 0;
 
         if (((i + n) * (n + 1 - i) / 2) != summa)
         {
@@ -32,35 +35,36 @@ int main()
             extension = summa - ((i + n) * (n + 1 - i) / 2);
         }
 
-        cout << l << endl;
+        file << l << endl;
 
         if (extension != 0)
         {
-            cout << to_string(extension) + " ";
+            file << extension << " ";
         }
 
         for (long long int j = i; j <= n; j++)
         {
-            cout << to_string(j) + " ";
+            file << j << " ";
         }
 
-        cout << endl;
-
-        cout << n - l << endl;
+        file << endl;
+        file << n - l << endl;
 
         for(long long int k = 1; k < i; k ++)
         {
             if(k != extension)
             {
-                cout << to_string(k) + " ";
+                file << k << " ";
             }
         }
 
-        cout << endl;
+        file << endl;
 
     }
     else
     {
-        cout << "NO" << endl;
+        file << "NO" << endl;
     }
+    file.close();
+    return 0;
 }

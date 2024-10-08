@@ -82,8 +82,7 @@ void fill_sums_array(long long int *arr, long long int size, long long int *weig
 
 long long binarySearch(long long int *arr, long long int size, long long int target)
 {
-    int left = 0, right = size - 1;
-    int result = -1;
+    int left = 0, right = size - 1, result = -1;
 
     while (left <= right)
     {

@@ -1,4 +1,5 @@
 #include <iostream>
+#include <iomanip>
 
 using namespace std;
 
@@ -22,7 +23,7 @@ long int double_factorial(int digit)
     return ans;
 }
 
-long double t(double x)
+long double t(long double x)
 {
     int k;
     long double sum_1 = 0, sum_2 = 0;
@@ -34,14 +35,20 @@ long double t(double x)
     return sum_1 / sum_2;
 }
 
-double f(double y)
+long double f(long double y)
 {
     return (7 * t(0.25) + 2 * t(1 + y)) / (6 - t(in_degree(y, 2) - 1));
 }
 int main()
 {
-    double y;
+    long double y;
+    int x = 32;
     cin >> y;
+    cout.width(4);
+    cout << x << endl;
+    cout << x << endl;
+    cout << x << endl;
+    cout << fixed << setprecision(13)  << f(y) << endl;
     cout << f(y) << endl;
     return 0;
 
