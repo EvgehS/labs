@@ -12,7 +12,7 @@ int is_in(long int number, long int *array, long int len)
     //     if (array[index] == number)
     //         return 1;
     // }
-    return 0;ё
+    return 0;
 }
 
 int strcmp(const char *s_1, const char *s_2)

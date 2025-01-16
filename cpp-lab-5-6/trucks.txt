@@ -1,0 +1,10 @@
+2	Volvo_FH16	Volvo	2020	7000	да	30000kg	автомат
+3	Stralis	IVECO	2016	4500	нет	24000kg	механика
+4	TGS	Man	2019	5500	да	26000kg	автомат
+5	Kenworth_T680	Kenworth	2021	8000	да	28000kg	механика
+7	Cascadia	Freightliner	2022	9000	нет	29000kg	автомат
+9	Renault_T_Range	Renault	2018	4800	да	24500kg	механика
+10	Scania_R450	Scania	2021	8500	нет	31000kg	автомат
+1	Actros	Mercedes-Benz	2018	5000	да	25000kg	механика
+6	Peterbilt_579	Peterbilt	2020	7500	да	27000kg	автомат
+8	Arocs	Mercedes-Benz	2017	6000	да	25500kg	механика

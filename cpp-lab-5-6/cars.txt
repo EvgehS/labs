@@ -1,0 +1,10 @@
+2	Chiron	Bugatti	2016	300000	нет	420km/h	automat
+3	911_Carrera	Porsche	2020	150000	да	320km/h	automat
+4	LaFerrari	Ferrari	2015	250000	нет	350km/h	automat
+6	Huracan	Lamborghini	2019	180000	нет	325km/h	automat
+7	Veyron	Bugatti	2010	280000	да	415km/h	automat
+9	GT-R_Nismo	Nissan	2017	140000	да	330km/h	automat
+10	M5_Competition	BMW	2022	160000	да	305km/h	automat
+8	RS7_Sportback	Audi	2021	130000	да	305km/h	automat
+5	Model_S_Plaid	Tesla	2022	120000	да	322km/h	automat
+1	Aventador	Lamborghini	2011	200000	нет	350km/h	automat
