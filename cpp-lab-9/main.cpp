@@ -30,10 +30,10 @@ int main() {
     size_t int_size = 6;
 
     size_t positive_count = count_if(int_array, int_size, is_positive);
-    std::cout << "Count of positive numbers: " << positive_count << std::endl;
+    std::cout << "Кол-во положительных чисел: " << positive_count << std::endl;
 
     size_t even_count = count_if(int_array, int_size, is_even);
-    std::cout << "Count of even numbers: " << even_count << std::endl;
+    std::cout << "Кол-во чётных чисел: " << even_count << std::endl;
 
     double double_array[] = {1.5, -2.3, 3.0, 4.7, -5.1};
     size_t double_size = 5;
@@ -41,7 +41,7 @@ int main() {
     size_t greater_than_two = count_if(double_array, double_size, [](double value) {
         return value > 2.0;
     });
-    std::cout << "Count of numbers greater than 2: " << greater_than_two << std::endl;
+    std::cout << "Кол-во числе больше двух: " << greater_than_two << std::endl;
 
     return 0;
 }
