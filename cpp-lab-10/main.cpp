@@ -1,9 +1,9 @@
 #include <iostream>
-#include <string>
 #include "binary_tree.hpp"
 
 
-int main() {
+int main() 
+{
     MyBinaryTree<int, int> tree;
     
     tree.push(1, 7);
