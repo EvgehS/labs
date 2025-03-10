@@ -17,7 +17,7 @@ public:
         return transform(*current);
     }
 
-    transform_iterator &operator++()
+    transform_iterator& operator++()
     {
         ++current;
         return *this;
